@@ -2,7 +2,7 @@
 function decrypt($msg_encrypted_bundle, $password){
 	$password = sha1($password);
 
-	$components = explode( ':', $msg_encrypted_bundle );;
+	$components = explode( ':', $msg_encrypted_bundle );
 	$iv            = $components[0];
 	$salt          = hash('sha256', $password.$components[1]);
 	$encrypted_msg = $components[2];
